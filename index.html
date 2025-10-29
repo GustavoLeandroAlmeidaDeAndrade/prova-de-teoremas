@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estudo de Caso: Prova Automática de Teoremas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>ESTUDO DE CASO: PROVA AUTOMÁTICA DE TEOREMAS</h1>
+        <h2>LÓGICA PARA COMPUTAÇÃO</h2>
+    </header>
+
+    <section id="apresentadores">
+        <h3>Apresentadores</h3>
+        <p>Rômulo Braun, Leonardo Molina, Gustavo Leandro, Gustavo Lopes.</p>
+        <p>Professora: WILCILENE MARIA KOWAL</p>
+    </section>
+
+    <nav id="sumario">
+        <h3>Sumário</h3>
+        <ul>
+            <li><a href="#motivacao-objetivo">1. Motivação e Objetivo</a></li>
+            <li><a href="#resolucao">2. Resolução</a></li>
+            <li><a href="#prover9-igualdade">3. Prover9 & Igualdade</a></li>
+            <li><a href="#saida">4. O que a saída mostrou</a></li>
+            <li><a href="#como-ler">5. Como ler</a></li>
+            <li><a href="#aplicacao-real">6. Aplicação real</a></li>
+            <li><a href="#conclusao">7. Conclusão</a></li>
+            <li><a href="#fontes">8. Fontes</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="motivacao-objetivo">
+            <h2>1. Motivação e Objetivo</h2>
+            <h3>Motivação</h3>
+            <ul>
+                <li>Testes ≠ prova de correção</li>
+                <li>Provas formais reduzem incidentes críticos</li>
+                <li>Dá para integrar em CI/CD</li>
+            </ul>
+            <p class="objetivo">Objetivo principal: PROVAR A DISTRIBUTIVIDADE EM ÁLGEBRA BOOLEANA</p>
+        </section>
+
+        <section id="resolucao">
+            <h2>2. Resolução</h2>
+            <ul>
+                <li>Trabalha em FNC (CNF)</li>
+                <li>Regra: de (A ∨ X) e (¬A ∨ Y) ⇒ (X ∨ Y)</li>
+                <li>Prova por refutação: negar o objetivo e buscar ⊥ (cláusula vazia / $F)</li>
+            </ul>
+        </section>
+
+        <section id="prover9-igualdade">
+            <h2>3. Prover9 & Igualdade</h2>
+            <ul>
+                <li>Para igualdade, usa paramodulação (substitui iguais por iguais)</li>
+                <li>Mistura: resolução + (back)rewrite + para(...)</li>
+                <li>Etiquetas ajudam a localizar o objetivo/resultado</li>
+            </ul>
+        </section>
+
+        <section id="saida">
+            <h2>4. O que a saída mostrou</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Métrica</th>
+                        <th>Valor</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Tempo</td>
+                        <td>~0,78 s (+0,19 s)</td>
+                    </tr>
+                    <tr>
+                        <td>Tamanho da prova</td>
+                        <td>141 passos</td>
+                    </tr>
+                    <tr>
+                        <td>Nível (profundidade)</td>
+                        <td>46</td>
+                    </tr>
+                    <tr>
+                        <td>Given clauses</td>
+                        <td>299</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>Fechamento: ... $F # answer(Distributivity) ⇒ Teorema provado</p>
+        </section>
+
+        <section id="como-ler">
+            <h2>5. Como ler</h2>
+            <p>*(O conteúdo detalhado de "Como ler" seria inserido aqui.)*</p>
+        </section>
+
+        <section id="aplicacao-real">
+            <h2>6. Aplicação Real</h2>
+            <ul>
+                <li>**Auditoria de firewall/ACL:** provar que “/admin externo nunca é permitido”</li>
+                <li>Modela regras como fórmulas; nega a propriedade e pede ⊥</li>
+                <li>Se provar, não existe rota que viole a política</li>
+            </ul>
+        </section>
+
+        <section id="conclusao">
+            <h2>7. Conclusão</h2>
+            <ul>
+                <li>Prover9 demonstra leis algébricas automaticamente</li>
+                <li>A saída é legível o suficiente para apresentar: objetivo, passos-chave, $F</li>
+                <li>Próximos passos: integrar em pipeline e checar políticas reais</li>
+            </ul>
+        </section>
+
+        <section id="fontes">
+            <h2>8. Fontes</h2>
+            <ul>
+                <li><a href="https://en.wikipedia.org/wiki/Prover9" target="_blank">Wikipedia - Prover9</a></li>
+                <li><a href="https://www.youtube.com/watch?v=TzG1yDYBBfE" target="_blank">YouTube - Vídeo (URL incompleta)</a></li>
+                <li><a href="https://www.cs.unm.edu/~mccune/prover9/gui/v05.html" target="_blank">Prover9 GUI</a></li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>Página gerada com base no Estudo de Caso de Lógica para Computação.</p>
+    </footer>
+
+</body>
+</html>
